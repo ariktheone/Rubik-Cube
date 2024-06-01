@@ -4083,3 +4083,38 @@ class Game {
 
 window.version = '0.99.2';
 window.game = new Game();
+
+// Existing functions and event listeners...
+
+// Function to handle keyboard inputs
+function handleKeyboardInput(event) {
+    // Check if the game is currently active or if the input should be ignored
+    if (!isGameActive || ignoreKeyboardInput) {
+        return;
+    }
+
+    // Get the key code
+    const keyCode = event.keyCode;
+
+    // Map key codes to specific actions
+    switch (keyCode) {
+        case 37: // Left arrow key
+            moveCubeLeft();
+            break;
+        case 38: // Up arrow key
+            moveCubeUp();
+            break;
+        case 39: // Right arrow key
+            moveCubeRight();
+            break;
+        case 40: // Down arrow key
+            moveCubeDown();
+            break;
+        // Add more cases for other keys as needed
+    }
+}
+
+// Add event listener for keydown events
+document.addEventListener('keydown', handleKeyboardInput);
+
+// Existing functions and event listeners...
